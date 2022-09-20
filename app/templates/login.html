@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}Give it a Go{% endblock %}
+
+{% block content %}
+
+{{super()}}
+
+<div id="intro-headers" class="centre">
+    <h1 class="pink" id="first-header">
+        Can You
+    </h1>
+    <h1 class="blue" id="second-header">
+        Hack It?
+    </h1>
+</div>
+
+<div id="form" class="flexcol">
+    <form action="/verify-login" method="post" id="login-form" class="flexcol">
+        <label for="username">Username</label>
+        <input name="username"></input>
+        <label for="password">Password</label>
+        <input name="password" type="password"></input>
+        <input type="submit" value="Submit" class="submit">
+    </form>
+    <div id="response"></div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{{super()}}
+
+{% endblock %}

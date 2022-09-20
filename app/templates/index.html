@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Give it a Go{% endblock %}
+
+{% block content %}
+
+{{super()}}
+
+<div id="intro-headers" class="centre">
+    <h1 class="pink" id="first-header">
+        Why Not
+    </h1>
+    <h1 class="blue" id="second-header">
+        Give Hacking
+    </h1>
+    <h1 class="pink" id="third-header">
+        A Go?
+    </h1>
+</div>
+
+<div class="centre">
+    <form action="/unsanitary">
+        <input type="submit" value="Proceed?" />
+    </form>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{{super()}}
+
+{% endblock %}
