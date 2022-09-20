@@ -1,15 +1,29 @@
 from flask import Flask
-from flask import request, render_template, flash, session, redirect, url_for
+from flask import request, render_template, flash, session, redirect, url_for, send_from_directory
 from flask_bootstrap import Bootstrap
 import sqlite3
 import hashlib
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 Bootstrap(app)
+
+#routes for static files
+@app.route('/robots.txt')
+@app.route('/favicon.ico')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 @app.route("/")
 def home():
     return render_template("index.html")
+
+#JAMES: your routes are structured like so
+#app.route() defines the paths that match the function
+#then define a function that either redirects or renders a template
+@app.route("/yournextchallenge")
+def chall_2():
+    #JAMES: make a file in templates/ with the same name
+    return render_template("challenge_2.html")
 
 @app.route("/unsanitary")
 def unsanitary():

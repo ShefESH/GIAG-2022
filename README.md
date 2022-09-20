@@ -27,3 +27,9 @@ $
 ### Using Docker
 
 To be tested
+
+## Challenges
+
+### Challenge 1: Robots
+
+Go to `/robots.txt` and find the URL `/yournextchallenge`. Enter this into URL bar.
