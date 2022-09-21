@@ -7,6 +7,9 @@ import hashlib
 app = Flask(__name__, static_folder='static')
 Bootstrap(app)
 
+#key should be longer but doesn't matter here
+app.secret_key = "noidungd90n8buv30"
+
 #routes for static files
 @app.route('/robots.txt')
 @app.route('/favicon.ico')
@@ -42,8 +45,6 @@ def challenge_5_login():
     else:
         return render_template("challenge_5.html")
 
-
-
 @app.route("/unsanitary")
 def unsanitary():
     return render_template("login.html")
@@ -65,7 +66,11 @@ def login():
     #login as returned user
     if len(users) > 0:
         session["id"], session["username"] = users[0]
-        return redirect(url_for("admin"))
+        return redirect(url_for("winner"))
     else:
         print("Wrong username or password")
-        return redirect(url_for("index", error="Wrong email or password"))
+        return redirect(url_for("login", error="Wrong email or password"))
+
+@app.route("/winner-you-cannot-guess-url")
+def winner():
+    return render_template("winner.html")
