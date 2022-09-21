@@ -54,7 +54,7 @@ def login():
     username = request.form["username"]
     password = hashlib.md5(request.form["password"].encode("utf-8")).hexdigest()
     print(password)
-    con = sqlite3.connect("raspi.db")
+    con = sqlite3.connect("db.sqlite")
 
     #SQLI Vulnerable Code
     con.row_factory = sqlite3.Row

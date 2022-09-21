@@ -1,4 +1,2 @@
 flask
 flask_bootstrap
-sqlite3
-hashlib
