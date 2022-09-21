@@ -140,3 +140,8 @@ form button {
     bottom: 0;
     width: 100%;
 }
+
+
+#hidden-text {
+    color: #1c1e29;
+}

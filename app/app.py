@@ -17,13 +17,31 @@ def static_from_root():
 def home():
     return render_template("index.html")
 
-#JAMES: your routes are structured like so
-#app.route() defines the paths that match the function
-#then define a function that either redirects or renders a template
 @app.route("/yournextchallenge")
 def chall_2():
-    #JAMES: make a file in templates/ with the same name
     return render_template("challenge_2.html")
+
+@app.route("/thisisthesecondsolution")
+def chall_3():
+    return render_template("challenge_3.html")
+
+@app.route("/youfoundthehiddentext")
+def chall_4():
+    return render_template("challenge_4.html")
+
+@app.route("/youhavefoundthefourthsolution")
+def chall_5():
+    return render_template("challenge_5.html")
+
+@app.route("/youhavefoundthefourthsolution", methods=["POST"])
+def challenge_5_login():
+    #get details from form
+    password = request.form["password"]
+    if password == "securepassword":
+        return redirect(url_for("unsanitary"))
+    else:
+        return render_template("challenge_5.html")
+
 
 @app.route("/unsanitary")
 def unsanitary():

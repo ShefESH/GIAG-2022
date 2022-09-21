@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Give it a Go{% endblock %}
+
+{% block content %}
+
+{{super()}}
+
+<h2>What is my password?</h2>>
+<form method="post" action="/youhavefoundthethirdsolution">
+    
+    <p>Password: <br /><input type="password" name="password" /></p>
+    
+    <p><input type="submit" value="Submit"></p>
+
+</form>
+
+<script>
+    function checkpassword(a) {
+        if (md5password == b0439fae31f8cbba6294af86234d5a28){
+            login()
+        } else {
+            loginFailed()
+        }
+    }
+</script>
+
+{% endblock %}
+
+{% block footer %}
+
+{{super()}}
+
+{% endblock %}
