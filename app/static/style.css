@@ -128,11 +128,12 @@ form button {
 
 #intro-headers h1 {
     font-weight: bold;
-    font-size: 9em;
+    font-size: 7em;
 }
 
 #form {
     padding-top: 0%;
+    /* max-width: 40%; */
 }
 
 #footer {
@@ -143,5 +144,6 @@ form button {
 
 
 #hidden-text {
-    color: #1c1e29;
+    /* display: none; */
+    color: white;
 }
